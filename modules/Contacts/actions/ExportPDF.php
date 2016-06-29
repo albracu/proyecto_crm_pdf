@@ -53,7 +53,7 @@ class Contacts_ExportPDF_Action extends Vtiger_Action_Controller {
 						</tr>
 					</tbody>
 				</table>';
-		$footer = '<div style="text-align:right;width:100%;border-top:1px solid #000000;">Impreso el: '.date('d-m-Y').'</div>';
+		$footer = '<div style="font-family:tahoma,geneva,sans-serif;text-align:right;width:100%;border-top:1px solid #000000;border-bottom:1px solid #000000;padding-bottom:10px;"><h4><i>Avalada por la Camara de Internacional de Comercio del Cono Sur - MERCOSUR</i></h4></div>';
 	
 		
 		$mpdf=new mPDF('','', 0, '', 15, 15, 16, 16, 9, 9);

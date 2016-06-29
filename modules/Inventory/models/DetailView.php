@@ -24,7 +24,7 @@ class Inventory_DetailView_Model extends Vtiger_DetailView_Model {
 		if(Users_Privileges_Model::isPermitted($moduleName, 'DetailView', $recordModel->getId())) {
 			$detailViewLinks = array( 
                                         'linklabel' => vtranslate('LBL_EXPORT_TO_PDF', $moduleName), 
-                                        'linkurl' => $recordModel->getExportPDFURL(), 
+                                        'linkurl' => "index.php?module=".$recordModel->getModuleName()."&action=ExportPDF&record=".$recordModel->getId(),
                                         'linkicon' => '' 
                         ); 
                         $linkModelList['DETAILVIEW'][] = Vtiger_Link_Model::getInstanceFromValues($detailViewLinks); 

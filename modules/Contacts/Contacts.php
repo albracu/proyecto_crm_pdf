@@ -20,6 +20,8 @@
  * Contributor(s): ______________________________________..
  ********************************************************************************/
 // Contact is used to store customer information.
+error_reporting(E_ERROR | E_WARNING);
+ini_set('display_errors','1');
 class Contacts extends CRMEntity {
 	var $log;
 	var $db;

@@ -10,4 +10,23 @@
 
 //Same as Accounts Detail View
 class Contacts_DetailView_Model extends Accounts_DetailView_Model {
+	
+	public function getDetailViewLinks($linkParams) {
+		$linkModelList = parent::getDetailViewLinks($linkParams);
+		$recordModel = $this->getRecord();
+		$moduleName = $recordModel->getmoduleName();
+
+		if(Users_Privileges_Model::isPermitted($moduleName, 'DetailView', $recordModel->getId())) {
+			$url = "index.php?module=".$recordModel->getModuleName()."&action=ExportPDF&record=".$recordModel->getId();
+			$detailViewLinks = array( 
+							'linklabel' => vtranslate('Exportar Bienvenida', $moduleName), 
+							'linkurl' => $url,
+							'linkicon' => '' 
+			); 
+			$linkModelList['DETAILVIEW'][] = Vtiger_Link_Model::getInstanceFromValues($detailViewLinks); 
+		}
+
+		return $linkModelList;
+	}
+	
 }

@@ -234,15 +234,15 @@ for($xz = 0; $xz < 3; $xz++)
 				case 2:
 					if ($xcifra < 1 )
 						{
-						$xcadena = "CERO PESOS CON $xdecimales/100";
+						$xcadena = "CERO PESOS";
 						}
 					if ($xcifra >= 1 && $xcifra < 2)
 						{
-						$xcadena = "UN PESO CON $xdecimales/100";
+						$xcadena = "UN PESO";
 						}
 					if ($xcifra >= 2)
 						{
-						$xcadena.= " PESOS CON $xdecimales/100"; // 
+						$xcadena.= " PESOS"; // 
 						}
 					break;
 				} // endswitch ($xz)
